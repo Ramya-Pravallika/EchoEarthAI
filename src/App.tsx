@@ -13,6 +13,7 @@ import SustainabilityCoach from "./components/SustainabilityCoach";
 import CommunityChallenges from "./components/CommunityChallenges";
 import FutureSimulatorDetail from "./components/FutureSimulatorDetail";
 import EcoAvatar from "./components/EcoAvatar";
+import HeroAnimationOverlay from "./components/HeroAnimationOverlay";
 import {
   Sparkles,
   TreePine,
@@ -53,6 +54,7 @@ export default function App() {
 
   // Special Visual Themes according to specification
   const [isTwilightMode, setIsTwilightMode] = useState<boolean>(false); // Elegant Dark vs Natural Tones toggle
+  const [showHeroAnimation, setShowHeroAnimation] = useState<boolean>(false);
   const [reducedMotion, setReducedMotion] = useState<boolean>(false);
   const [largeText, setLargeText] = useState<boolean>(false);
   const [highContrast, setHighContrast] = useState<boolean>(false);
@@ -137,6 +139,7 @@ export default function App() {
 
       saveSession(nextState);
       triggerNarrativeReport(nextState);
+      setShowHeroAnimation(true);
     } catch (err) {
       setErrorMessage("Encountered connection drop with model. Retrying assessment submission.");
     } finally {
@@ -355,13 +358,22 @@ export default function App() {
               </button>
 
               {session.hasCompletedAssessment && (
-                <button
-                  id="btn-reset-assessment"
-                  onClick={handleReset}
-                  className="px-3.5 py-2 text-xs font-bold text-rose-700 bg-rose-50/50 hover:bg-rose-50 border border-rose-200 rounded-xl flex items-center gap-1 cursor-pointer transition-all active:scale-95"
-                >
-                  <RotateCcw className="w-3.5 h-3.5" /> Start New Mirroring
-                </button>
+                <>
+                  <button
+                    id="btn-trigger-prophecy"
+                    onClick={() => setShowHeroAnimation(true)}
+                    className="px-3.5 py-2 text-xs font-bold text-amber-700 bg-amber-50/50 hover:bg-amber-100 border border-amber-200 rounded-xl flex items-center gap-1.5 cursor-pointer transition-all active:scale-95"
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Watch Prophecy Story
+                  </button>
+                  <button
+                    id="btn-reset-assessment"
+                    onClick={handleReset}
+                    className="px-3.5 py-2 text-xs font-bold text-rose-700 bg-rose-50/50 hover:bg-rose-50 border border-rose-200 rounded-xl flex items-center gap-1 cursor-pointer transition-all active:scale-95"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" /> Start New Mirroring
+                  </button>
+                </>
               )}
             </div>
           </div>
@@ -1035,6 +1047,12 @@ export default function App() {
           </div>
         )}
       </AnimatePresence>
+
+      <HeroAnimationOverlay
+        isOpen={showHeroAnimation}
+        onClose={() => setShowHeroAnimation(false)}
+        isTwilightMode={isTwilightMode}
+      />
     </div>
   );
 }
