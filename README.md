@@ -2,15 +2,15 @@
 
 <div align="center">
 
-# EchoEarth AI
-
 ### **Every Choice Leaves an Echo. Make Yours Greener.**
 
-**An AI-powered behavioral sustainability platform that transforms carbon awareness into meaningful action through personalized insights and immersive experiences.**
+*An AI-powered behavioral sustainability platform that transforms carbon awareness into meaningful action.*
 
----
-
-**Google Virtual Prompt Wars - Challenge 3**
+![Next.js](https://img.shields.io/badge/Next.js-15-black)
+![React](https://img.shields.io/badge/React-19-blue)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![Gemini AI](https://img.shields.io/badge/Powered%20by-Gemini%20AI-orange)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 </div>
 
