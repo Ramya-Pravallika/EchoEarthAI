@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Fira+Code:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Natural Tones styling presets */
+.natural-earth-bg {
+  background-color: #F7F5F0; /* Warm sand/ivory */
+}
+
+/* Elegant dark simulation transitions */
+.elegant-dark-bg {
+  background-color: #0c0f12; /* Custom deep cosmos dark */
+}
+
+/* Modular borders for Geometric Balance layout */
+.geometric-card {
+  border: 1.5px solid #E4E2DB;
+  border-radius: 12px;
+  background-color: #FCFAF6;
+  box-shadow: 2px 2px 0px rgba(28, 25, 23, 0.08);
+}
+
+.geometric-card-dark {
+  border: 1.5px solid #232a31;
+  border-radius: 12px;
+  background-color: #12181f;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Soft ambient pulse */
+@keyframes ambientGlow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+.ambient-aurora {
+  animation: ambientGlow 8s infinite ease-in-out;
+}
