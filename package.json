@@ -1,5 +1,8 @@
 {
-  "name": "react-example",
+  "name": "echoearth-ai",
+  "description": "AI-powered Carbon Footprint Awareness Platform built for Google Prompt Wars Challenge 3",
+"author": "Ramya Pravallika",
+"license": "MIT",
   "private": true,
   "version": "0.0.0",
   "type": "module",
