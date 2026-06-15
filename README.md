@@ -18,259 +18,217 @@
 
 # 📖 Overview
 
-EchoEarth AI is an intelligent sustainability companion designed to help individuals **understand, track, and reduce their carbon footprint through personalized AI insights and behavioral psychology**.
+EchoEarth AI is an AI-powered Carbon Footprint Awareness Platform designed to help users understand, track, and reduce their environmental impact through **behavioral intelligence rather than simple carbon calculations**.
 
-Instead of presenting users with static dashboards and carbon numbers, EchoEarth AI creates an immersive experience where AI transforms daily lifestyle choices into emotional stories, contextual nudges, and habit-building recommendations.
+Instead of displaying static dashboards and charts, EchoEarth AI creates personalized experiences that encourage users to adopt sustainable habits through AI-powered recommendations, contextual nudges, immersive visualization, and habit formation.
 
-The platform aims to bridge the gap between **awareness and action**, encouraging long-term sustainable behavior.
+The platform is built around one simple philosophy:
 
----
-
-# 🎯 Challenge Statement
-
-> **Design a solution that helps individuals understand, track, and reduce their carbon footprint through simple actions and personalized insights.**
-
-EchoEarth AI addresses this challenge by combining:
-
-* 🤖 AI-powered personalization
-* 🌱 Behavioral science
-* 🎮 Gamification
-* 📊 Predictive analytics
-* 🌍 Environmental storytelling
-* 👥 Community accountability
+> **Awareness should lead to action.**
 
 ---
 
-# 💡 Problem
+# 🎯 Problem Statement
 
-Traditional carbon calculators tell users **how much carbon they produce**.
+Modern carbon calculators provide numbers but rarely inspire behavioral change.
 
-They rarely help users understand:
+Users may know their carbon footprint but often lack:
 
-* Why it matters
-* Which habits contribute the most
-* What simple actions can create meaningful change
-* How small improvements compound over time
+* Context
+* Personalization
+* Motivation
+* Actionable recommendations
+* Habit reinforcement
 
-As a result, awareness rarely translates into action.
+EchoEarth AI bridges this gap by transforming environmental data into personalized experiences that encourage sustainable daily decisions.
 
 ---
 
 # 🚀 Solution
 
-EchoEarth AI transforms invisible carbon emissions into **personalized experiences** that encourage sustainable habits.
+EchoEarth AI combines artificial intelligence, behavioral psychology, and interactive user experiences to create a sustainability companion that helps users make better environmental decisions every day.
 
-The platform combines AI reasoning, contextual insights, immersive visualization, and behavioral psychology to help users make better environmental decisions every day.
+The platform focuses on:
 
-Our design philosophy is:
-
-> **Awareness → Reflection → Action → Habit → Lasting Change**
+* Personalized awareness
+* Behavioral analysis
+* AI coaching
+* Contextual nudges
+* Future impact prediction
+* Community engagement
+* Habit formation
 
 ---
 
 # ✨ Features
 
-## 🤖 AI Lifestyle Assessment
+## 🧠 Conversational Lifestyle Assessment
 
-* Conversational onboarding
-* Transportation analysis
-* Food habits
-* Energy consumption
-* Shopping behavior
-* Travel patterns
-* Waste generation
+An AI-powered conversational onboarding experience collects information about transportation, food habits, electricity usage, travel, shopping, and daily lifestyle.
 
-Generates a personalized sustainability profile.
+The collected information is used to generate a personalized sustainability profile.
 
 ---
 
-## 🌳 Living Earth Visualization
+## 🌳 Living Ecosystem Visualization
 
-A dynamic virtual ecosystem evolves based on user behavior.
+Instead of static dashboards, users interact with a virtual ecosystem that evolves based on their daily choices.
 
-* 🌲 More trees for sustainable actions
-* ☀️ Cleaner skies
-* 🌊 Healthier rivers
-* 🦋 Wildlife restoration
+Positive habits result in:
 
-Users experience environmental impact emotionally instead of numerically.
+* More trees
+* Cleaner air
+* Healthier rivers
+* Better biodiversity
 
----
-
-## 🧠 AI Behavioral Intelligence
-
-Analyzes recurring patterns to identify:
-
-* High-impact carbon sources
-* Sustainable opportunities
-* Easy behavioral improvements
-* Long-term trends
-
-Recommendations are prioritized by:
-
-* Highest impact
-* Lowest effort
-* Greatest likelihood of adoption
+The visualization creates an emotional connection between behavior and environmental impact.
 
 ---
 
-## 💡 Contextual AI Nudges
+## 🤖 AI Sustainability Coach
 
-Provides timely, supportive interventions.
+An intelligent assistant provides:
+
+* Sustainability education
+* Personalized recommendations
+* Habit-building guidance
+* Carbon reduction tips
+* Environmental explanations
+
+The coach acts as a long-term companion rather than a simple chatbot.
+
+---
+
+## 💡 AI Nudge Engine
+
+Behavior-aware recommendations are generated based on user context.
 
 Example:
 
-> *"Cooking dinner tonight instead of ordering delivery could reduce your weekly footprint and maintain your Green Streak."*
+> "Walking instead of driving today could reduce your weekly footprint and maintain your sustainability streak."
 
-The goal is encouragement, not guilt.
-
----
-
-## 📖 Carbon Stories
-
-Converts emissions into relatable narratives.
-
-Instead of:
-
-> "You emitted 18 kg CO₂."
-
-Users see:
-
-> "Your transportation emissions this week are comparable to the carbon absorbed by several mature trees."
+Nudges are supportive and encourage positive reinforcement.
 
 ---
 
-## 🔮 Future Simulator
+## 🔮 Future Impact Simulator
 
-Predicts future environmental impact based on current habits.
+Users can visualize the long-term impact of their current habits.
 
-Displays:
+The simulator compares:
 
-* Current trajectory
-* Improved trajectory
-* Potential savings
-* Long-term environmental impact
+* Current lifestyle
+* Improved lifestyle
+* Potential carbon savings
+* Future environmental outcomes
 
 ---
 
-## 🎯 Daily Eco Missions
+## 📖 Reflection Journal
 
-Personalized sustainability challenges.
+Daily reflections encourage users to think about their environmental decisions.
 
-Examples:
-
-* Walk instead of drive
-* Use a reusable bottle
-* Reduce food waste
-* Avoid single-use plastics
-
-Rewards include:
-
-* XP
-* Streaks
-* Badges
-* Ecosystem evolution
+AI summarizes recurring patterns and highlights opportunities for improvement.
 
 ---
 
 ## 👥 Community Challenges
 
-Promotes collective sustainability through:
+Users can collaborate with:
 
 * Friends
 * Families
-* Colleges
 * Offices
+* Colleges
 
-Encourages collaboration rather than competition.
-
----
-
-## 📝 Reflection Journal
-
-Daily AI-guided reflections encourage mindfulness and habit formation.
-
-AI summarizes progress and highlights positive behavioral trends.
+Shared sustainability goals encourage collective accountability and long-term engagement.
 
 ---
 
-## 💬 AI Sustainability Coach
+## 🌱 Eco Avatar
 
-An intelligent assistant that:
-
-* Answers sustainability questions
-* Explains carbon impact
-* Recommends practical alternatives
-* Provides personalized coaching
-
----
-
-# 🏛️ System Architecture
-
-```text
-                         User
-
-                           │
-
-                Lifestyle Assessment
-
-                           │
-
-              AI Behavioral Analysis
-
-                           │
-
-       ┌──────────────┬──────────────┬──────────────┐
-
-       │              │              │
-
- Carbon Engine   Recommendation   Prediction Engine
-
-       │              │              │
-
-       └──────────────┴──────────────┘
-
-                           │
-
-               Contextual Nudge Engine
-
-                           │
-
-            Living Earth Visualization
-
-                           │
-
-     Daily Missions • Journal • Community
-
-                           │
-
-               Long-Term Habit Formation
-```
+The user's sustainability journey is represented through an evolving virtual avatar that grows as healthier environmental habits are formed.
 
 ---
 
 # 📂 Project Structure
 
 ```text
-EchoEarth-AI/
+EchoEarthAI/
 
-├── app/
-├── components/
-├── features/
-├── services/
-├── lib/
-├── hooks/
-├── utils/
-├── constants/
-├── types/
-├── prisma/
-├── tests/
-│   ├── unit/
-│   ├── integration/
-│   └── e2e/
-├── public/
-├── docs/
+├── assets/
+│   └── .aistudio/
+│
+├── src/
+│   ├── components/
+│   │
+│   ├── CommunityChallenges.tsx
+│   ├── ConversationalAssessment.tsx
+│   ├── EcoAvatar.tsx
+│   ├── FutureSimulatorDetail.tsx
+│   ├── LivingEcosystem.tsx
+│   ├── NudgeEngine.tsx
+│   ├── ReflectionJournal.tsx
+│   └── SustainabilityCoach.tsx
+│
+│   ├── App.tsx
+│   ├── main.tsx
+│   ├── index.css
+│   └── types.ts
+│
+├── .env.example
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── server.ts
+├── tsconfig.json
+├── vite.config.ts
 └── README.md
+```
+
+---
+
+# 🏗️ Architecture
+
+```text
+                User
+
+                  │
+
+      Conversational Assessment
+
+                  │
+
+          AI Carbon Analysis
+
+                  │
+
+        Behavioral Intelligence
+
+                  │
+
+     ┌─────────┬─────────┬─────────┐
+
+     │         │         │
+
+ AI Coach   Nudge AI   Future Simulator
+
+     │         │         │
+
+     └─────────┴─────────┘
+
+                  │
+
+        Living Ecosystem UI
+
+                  │
+
+ Reflection Journal + Community
+
+                  │
+
+         Sustainable Habit Loop
 ```
 
 ---
@@ -279,169 +237,135 @@ EchoEarth-AI/
 
 ## Frontend
 
-* Next.js 15
-* React 19
+* React
 * TypeScript
-* Tailwind CSS
-* shadcn/ui
-* Framer Motion
-
-## Backend
-
-* Next.js API Routes
-* Prisma ORM
-
-## Database
-
-* PostgreSQL
-* SQLite (Development)
+* Vite
+* CSS
 
 ## AI
 
 * Gemini API
-* Structured JSON Prompting
-* Server-side AI Orchestration
+* Prompt Engineering
+* Structured AI Responses
 
-## Authentication
+## Backend
 
-* NextAuth
-* Google OAuth
-
-## Validation
-
-* React Hook Form
-* Zod
+* Node.js
+* Express Server
 
 ---
 
 # 🧠 AI Prompting Strategy
 
-The application uses structured prompt engineering to generate personalized sustainability recommendations.
+EchoEarth AI uses prompt engineering to generate personalized behavioral recommendations instead of generic sustainability advice.
 
 The AI is instructed to:
 
-* Analyze behavioral patterns
-* Identify major emission sources
+* Analyze user lifestyle
+* Identify major emission contributors
 * Recommend practical alternatives
-* Prioritize low-effort, high-impact actions
-* Explain reasoning in simple language
-* Encourage positive habit formation
-
-Responses are generated in structured JSON format to ensure predictable application behavior.
+* Prioritize low-effort, high-impact improvements
+* Explain recommendations in simple language
+* Encourage sustainable habit formation
 
 ---
 
 # 🔒 Security
 
-Security considerations include:
+The project follows secure development practices:
 
-* ✅ Server-side validation
-* ✅ Zod schema validation
-* ✅ Prompt injection protection
-* ✅ Environment variable isolation
-* ✅ Secure authentication
-* ✅ Rate limiting
-* ✅ SQL injection prevention
-* ✅ XSS prevention
-* ✅ Secure API design
-* ✅ Principle of least privilege
+* Environment variables for API keys
+* Server-side AI calls
+* Input validation
+* Prompt injection mitigation
+* Secure API communication
+* Error handling
+* Client-side sanitization
 
-No API keys are exposed to the client.
+Sensitive credentials are never exposed to the frontend.
 
 ---
 
 # ⚡ Performance
 
-Optimizations include:
+Performance optimizations include:
 
-* Dynamic imports
-* Lazy loading
-* Code splitting
-* AI response caching
-* Memoization
-* Optimized rendering
-* Efficient state management
-* Image optimization
-* Server Components
-
-Designed for fast loading and scalability.
+* Component-based architecture
+* Efficient rendering
+* Modular design
+* Lazy component loading
+* Lightweight assets
+* Optimized state updates
 
 ---
 
 # ♿ Accessibility
 
-EchoEarth AI is designed following WCAG best practices.
-
-Features include:
+The application follows inclusive design principles:
 
 * Semantic HTML
-* Keyboard navigation
-* Screen reader compatibility
-* ARIA labels
-* High contrast UI
+* Keyboard accessibility
 * Responsive layouts
-* Focus indicators
-* Reduced motion support
-
-Accessibility is integrated into the design process from the beginning.
+* Readable typography
+* Accessible forms
+* High-contrast interface
+* Mobile-friendly design
 
 ---
 
-# 🧪 Testing
+# 🧪 Testing Strategy
 
-## Unit Tests
+The project is designed to support:
+
+### Unit Testing
 
 * Carbon calculations
-* Recommendation engine
-* Validation utilities
-* Prediction logic
+* AI recommendation logic
+* Utility functions
 
-## Integration Tests
+### Integration Testing
 
-* Authentication
 * AI services
-* Database operations
 * API endpoints
+* User workflows
 
-## End-to-End Tests
+### End-to-End Testing
 
-* User onboarding
-* Lifestyle assessment
+* Assessment flow
 * AI coaching
-* Mission completion
+* Community challenges
 * Reflection journal
-* Community participation
-
-Edge cases and failure scenarios are covered to ensure reliability.
+* Future simulator
 
 ---
 
-# 📈 Future Roadmap
+# 🌱 Future Enhancements
 
-* Wearable integration
-* Smart home energy insights
-* Carbon-aware travel planning
-* Weekly AI sustainability reports
-* Enterprise sustainability dashboards
-* Household carbon tracking
-* Offline support
-* External carbon data integrations
-
----
-
-# 📌 Assumptions
-
-* User-provided lifestyle information is reasonably accurate.
-* Carbon estimates are intended for awareness and education.
-* AI recommendations prioritize practical behavior change over scientific precision.
-* The platform complements, but does not replace, expert environmental guidance.
+* Carbon-aware travel planner
+* Smart wearable integration
+* Household sustainability tracking
+* Weekly AI reports
+* Carbon marketplace integration
+* Team sustainability challenges
+* Gamified achievements
+* AI-generated sustainability roadmap
 
 ---
 
-# 🌍 Final Thought
+# 👩‍💻 Developed For
 
-EchoEarth AI is more than a carbon footprint tracker.
+**Google Virtual Prompt Wars – Challenge 3**
 
-It is an **AI-powered behavioral intelligence platform** that transforms environmental awareness into meaningful daily action through personalization, storytelling, and habit formation.
+Building an AI-powered platform that helps individuals **understand, track, and reduce their carbon footprint through personalized insights and behavioral change.**
 
-> **Every choice leaves an echo. Make yours greener.**
+---
+
+<div align="center">
+
+## 🌍 EchoEarth AI
+
+### **Every Choice Leaves an Echo. Make Yours Greener.**
+
+Transforming awareness into action through AI-powered sustainability.
+
+</div>
