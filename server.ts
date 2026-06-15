@@ -159,9 +159,18 @@ Be kind, encouraging, supportive, and avoid guilt-triggering vocabulary. Double-
     const cleanText = response.text ? response.text.trim() : "{}";
     res.json(JSON.parse(cleanText));
   } catch (error: any) {
-    console.error("Carbon Assessment error:", error);
-    res.status(500).json({ error: "Failed to generate AI carbon evaluation", details: error.message });
-  }
+
+    console.error(error);
+
+    res.status(500).json({
+
+        error: error.message,
+
+        stack: error.stack
+
+    });
+
+}
 });
 
 // Weekly Narrative / Ecosystem Report generator
@@ -233,7 +242,7 @@ Always be exceptionally encouraging, supportive, and full of action-oriented psy
 Keep answers concise, extremely practical, and free from guilt. Highlight easy wins first. Write in a clear, formatted human tone. Under 150 words.`;
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: "gemini-2.5-flash",
       contents: contents,
       config: {
         systemInstruction: systemInstruction,
