@@ -11,8 +11,14 @@ import { useAssessment } from "../hooks/useAssessment";
 import { useSimulation } from "../hooks/useSimulation";
 
 // Modular UI Components
+import AppHeader from "../components/layout/AppHeader";
 import { LivingEcosystem } from "../features/ecosystem";
 import ConversationalAssessment from "../features/assessment/components/ConversationalAssessment";
+import CarbonIdentityCard from "../features/assessment/components/CarbonIdentityCard";
+import FootprintBreakdown from "../features/assessment/components/FootprintBreakdown";
+import DailyMissions from "../features/assessment/components/DailyMissions";
+import CarbonInterventions from "../features/assessment/components/CarbonInterventions";
+
 import { NudgeEngine } from "../features/nudges";
 import { ReflectionJournal } from "../features/journal";
 import { SustainabilityCoach } from "../features/coach";
@@ -229,106 +235,17 @@ export default function App() {
         largeText ? "text-lg" : "text-sm"
       } ${highContrast ? "contrast-125" : ""}`}
     >
-      {/* Top Brand Navigation Bar using Geometric Balance */}
-      <header id="app-navigation" className={`sticky top-0 z-50 transition-colors duration-500 backdrop-blur-md ${headerThemeClass}`}>
-        <div className="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className={`w-10 h-10 rounded-xl flex items-center justify-center font-bold tracking-tight text-xl shadow-sm transition-all ${
-              isTwilightMode ? "bg-amber-400 text-slate-950" : "bg-emerald-800 text-stone-100"
-            }`}>
-              {isTwilightMode ? "✦" : "🍃"}
-            </div>
-            <div>
-              <h1 className={`text-xl font-extrabold tracking-tight flex items-center gap-1.5 ${titleTextClass}`}>
-                EchoEarth AI
-              </h1>
-              <span className={`text-[10px] font-semibold tracking-widest uppercase block ${mutedTextClass}`}>
-                Every Choice Leaves a Reflection
-              </span>
-            </div>
-          </div>
-
-          {/* Configuration and Special Immersive Dark Simulator Toggle */}
-          <div id="controls-panel" className="flex flex-wrap items-center gap-3">
-            {/* Visual Design Mode Selectors */}
-            <div id="theme-visual-selector" className={`flex items-center p-1 rounded-xl border transition-all ${
-              isTwilightMode ? "bg-[#1A222B] border-[#2E3B4E]" : "bg-[#EFECE6] border-[#DAD6CD]"
-            }`}>
-              <button
-                id="btn-toggle-natural"
-                onClick={() => setIsTwilightMode(false)}
-                className={`px-3 py-1.5 text-xs rounded-lg font-bold flex items-center gap-1.5 transition-all ${
-                  !isTwilightMode
-                    ? "bg-[#FCFAF6] text-emerald-900 shadow-sm border border-[#E4E2DB]"
-                    : "text-slate-400 hover:text-white"
-                }`}
-              >
-                <Sun className="w-3.5 h-3.5 text-amber-600" /> Natural Earth
-              </button>
-
-              <button
-                id="btn-toggle-twilight"
-                onClick={() => setIsTwilightMode(true)}
-                className={`px-3 py-1.5 text-xs rounded-lg font-bold flex items-center gap-1.5 transition-all ${
-                  isTwilightMode
-                    ? "bg-[#12181F] text-amber-300 shadow-sm border border-[#232A31]"
-                    : "text-stone-600 hover:text-stone-900"
-                }`}
-              >
-                <Moon className="w-3.5 h-3.5 text-indigo-400" /> Elegant Dark Simulation
-              </button>
-            </div>
-
-            {/* General Utilities & Resets */}
-            <div id="accessory-utilities" className="flex items-center gap-2">
-              <button
-                id="btn-toggle-motion"
-                onClick={() => setReducedMotion(!reducedMotion)}
-                className={`p-2 text-xs rounded-lg border font-bold transition-all ${
-                  reducedMotion
-                    ? "bg-stone-800 text-white"
-                    : isTwilightMode ? "border-[#232A31] text-slate-350 hover:bg-[#1A222B]" : "border-[#E4E2DB] text-stone-600 hover:bg-[#EFECE6]"
-                }`}
-                title="Toggle Reduced Motion"
-              >
-                {reducedMotion ? "Motion Off" : "Motion"}
-              </button>
-
-              <button
-                id="btn-toggle-text-size"
-                onClick={() => setLargeText(!largeText)}
-                className={`px-3 py-2 text-xs rounded-lg border font-bold transition-all ${
-                  largeText
-                    ? "bg-stone-800 text-white"
-                    : isTwilightMode ? "border-[#232A31] text-slate-350 hover:bg-[#1A222B]" : "border-[#E4E2DB] text-stone-600 hover:bg-[#EFECE6]"
-                }`}
-                title="Toggle Large Font Size"
-              >
-                A+
-              </button>
-
-              {session.hasCompletedAssessment && (
-                <>
-                  <button
-                    id="btn-trigger-prophecy"
-                    onClick={() => setShowHeroAnimation(true)}
-                    className="px-3.5 py-2 text-xs font-bold text-amber-700 bg-amber-50/50 hover:bg-amber-100 border border-amber-200 rounded-xl flex items-center gap-1.5 cursor-pointer transition-all active:scale-95"
-                  >
-                    <Sparkles className="w-3.5 h-3.5 text-amber-500" /> Watch Prophecy Story
-                  </button>
-                  <button
-                    id="btn-reset-assessment"
-                    onClick={handleReset}
-                    className="px-3.5 py-2 text-xs font-bold text-rose-700 bg-rose-50/50 hover:bg-rose-50 border border-rose-200 rounded-xl flex items-center gap-1 cursor-pointer transition-all active:scale-95"
-                  >
-                    <RotateCcw className="w-3.5 h-3.5" /> Start New Mirroring
-                  </button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      </header>
+      <AppHeader
+        isTwilightMode={isTwilightMode}
+        setIsTwilightMode={setIsTwilightMode}
+        reducedMotion={reducedMotion}
+        setReducedMotion={setReducedMotion}
+        largeText={largeText}
+        setLargeText={setLargeText}
+        hasCompletedAssessment={session.hasCompletedAssessment}
+        setShowHeroAnimation={setShowHeroAnimation}
+        handleReset={handleReset}
+      />
 
       {/* Main Container Layout */}
       <main id="main-content-stage" className="max-w-7xl mx-auto px-4 mt-8">
@@ -554,40 +471,11 @@ export default function App() {
                 </div>
 
                 {/* Sub-distribution breakdowns bars */}
-                {session.reflection?.breakdown && (
-                  <div id="footprint-distribution-breakdown" className={`${cardThemeClass} p-6 space-y-4 transition-colors duration-500`}>
-                    <h4 className={`font-bold tracking-tight text-sm flex items-center gap-1.5 ${titleTextClass}`}>
-                      <Layers className="w-4 h-4 text-emerald-800" /> Sector Footprint Appraisals
-                    </h4>
-
-                    <div className="space-y-3 pt-1">
-                      {[
-                        { key: "transportation", label: "Mobility & Aviation", color: "bg-cyan-500" },
-                        { key: "food", label: "Diet & Food Waste", color: "bg-emerald-600" },
-                        { key: "energy", label: "Home Power & Heating", color: "bg-amber-500" },
-                        { key: "shopping", label: "Material Purchases", color: "bg-rose-500" },
-                        { key: "waste", label: "Waste Disposal", color: "bg-slate-500" },
-                      ].map((sec) => {
-                        const val = (session.reflection?.breakdown as any)[sec.key] || 0.1;
-                        const maxVal = Math.max(...(Object.values(session.reflection?.breakdown || {}) as number[]));
-                        const widthPct = Math.max(5, (val / (maxVal || 1)) * 100);
-
-                        return (
-                          <div key={sec.key} className="space-y-1">
-                            <div className="flex justify-between text-xs font-semibold">
-                              <span className={mutedTextClass}>{sec.label}</span>
-                              <span className={`font-mono ${titleTextClass}`}>{val.toFixed(1)}t</span>
-                            </div>
-                            <div className={`w-full h-1.5 rounded-full overflow-hidden ${
-                              isTwilightMode ? "bg-slate-800" : "bg-stone-200"
-                            }`}>
-                              <div className={`h-full ${sec.color}`} style={{ width: `${widthPct}%` }} />
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                {session.reflection && (
+                  <FootprintBreakdown
+                    reflection={session.reflection}
+                    isTwilightMode={isTwilightMode}
+                  />
                 )}
               </div>
 
@@ -596,117 +484,20 @@ export default function App() {
                 
                 {/* Personalized Identity & Description */}
                 {session.reflection && (
-                  <div className={`rounded-2xl p-6 md:p-8 relative overflow-hidden transition-all duration-500 ${
-                    isTwilightMode
-                      ? "bg-gradient-to-br from-[#12181F] to-[#0A0D14] border border-[#232A31] text-white"
-                      : "bg-gradient-to-br from-[#EFECE6] to-[#E5E0D5] border border-[#C6C0B4] text-stone-900"
-                  }`}>
-                    <div className="absolute top-0 right-0 p-8 opacity-15 pointer-events-none select-none">
-                      <Sparkles className="w-40 h-40 text-emerald-700/20" />
-                    </div>
-
-                    <div className="space-y-3.5 relative z-10">
-                      <span className={`text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-widest inline-flex items-center gap-1.5 border ${
-                        isTwilightMode
-                          ? "bg-amber-400/20 border-amber-400/30 text-amber-300"
-                          : "bg-emerald-800/10 border-emerald-800/20 text-emerald-800"
-                      }`}>
-                        <Sparkle className="w-3.5 h-3.5 animate-spin-slow" /> Your Carbon Reflection Identity
-                      </span>
-                      <h3 className={`text-2xl md:text-3xl font-extrabold tracking-tight ${titleTextClass}`}>
-                        {session.reflection.carbonIdentity.title}
-                      </h3>
-                      <p className={`text-sm md:text-base leading-relaxed ${bodyTextClass}`}>
-                        {session.reflection.carbonIdentity.description}
-                      </p>
-
-                      <div className="pt-4 border-t border-stone-400/20 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div className="space-y-1">
-                          <span className={`text-[10px] uppercase font-bold tracking-widest block ${mutedTextClass}`}>
-                            Dominant Footprint Contributor
-                          </span>
-                          <span className="text-sm font-bold text-amber-600">
-                            {session.reflection.carbonIdentity.dominantHabit}
-                          </span>
-                        </div>
-                        <p className={`text-xs max-w-sm md:text-right italic ${bodyTextClass}`}>
-                           {session.reflection.carbonIdentity.contributorExplanation}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <CarbonIdentityCard
+                    reflection={session.reflection}
+                    isTwilightMode={isTwilightMode}
+                  />
                 )}
 
                 {/* Adaptive Daily Missions Checklist styled symmetrically */}
                 {session.reflection && (
-                  <div id="daily-missions-container" className={`${cardThemeClass} p-6 space-y-4 transition-colors duration-500`}>
-                    <div className="flex justify-between items-center">
-                      <h4 className={`font-bold tracking-tight text-base flex items-center gap-2 ${titleTextClass}`}>
-                        <CheckCircle2 className="w-5 h-5 text-emerald-700" /> Micro Daily Missions
-                      </h4>
-                      <span className={`text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-md ${
-                        isTwilightMode ? "bg-slate-800 text-slate-300" : "bg-stone-200 text-stone-700"
-                      }`}>
-                        Resets daily
-                      </span>
-                    </div>
-
-                    <p className={`text-xs leading-relaxed ${bodyTextClass}`}>
-                      Small choices cascade into planetary wave shifts. Check off your microtasks today to reflect back on your forest biome pool.
-                    </p>
-
-                    <div className="space-y-3 pt-1">
-                      {session.reflection.dailyMissions.map((mission) => {
-                        const isDone = session.completedMissions.includes(mission.id);
-                        return (
-                          <div
-                            key={mission.id}
-                            id={`mission-card-${mission.id}`}
-                            onClick={() => handleToggleMission(mission.id, mission.pointsReward)}
-                            className={`p-3.5 rounded-xl border cursor-pointer select-none transition-all flex items-start gap-4 ${
-                              isDone
-                                ? isTwilightMode
-                                  ? "bg-emerald-950/20 border-emerald-800/40 text-slate-400"
-                                  : "bg-emerald-50/50 text-stone-600 border-emerald-300"
-                                : isTwilightMode
-                                ? "bg-[#161D26] border-[#232A31] hover:border-slate-500"
-                                : "bg-[#FCFAF6] border-[#E4E2DB] hover:border-stone-400"
-                            }`}
-                          >
-                            <div className="pt-0.5">
-                              <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${
-                                isDone ? "bg-emerald-700 border-emerald-700 text-white" : "border-stone-400"
-                              }`}>
-                                {isDone && <CheckCircle2 className="w-3.5 h-3.5" />}
-                              </div>
-                            </div>
-
-                            <div className="space-y-1">
-                              <div className="flex items-center gap-2 flex-wrap">
-                                <span className={`text-sm font-semibold ${isDone ? "line-through text-stone-400" : titleTextClass}`}>
-                                  {mission.title}
-                                </span>
-                                <span className={`text-[9px] font-bold uppercase px-1.5 py-0.5 rounded ${
-                                  isTwilightMode ? "bg-[#232A31] text-slate-400" : "bg-stone-200 text-stone-600"
-                                }`}>
-                                  {mission.category}
-                                </span>
-                              </div>
-                              <p className={`text-xs ${isDone ? "text-stone-400" : bodyTextClass}`}>
-                                {mission.description}
-                              </p>
-                            </div>
-
-                            <div className="ml-auto text-right self-center">
-                              <span className={`text-xs font-bold font-mono ${isDone ? "text-emerald-700 font-black" : mutedTextClass}`}>
-                                +{mission.pointsReward}pts
-                              </span>
-                            </div>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <DailyMissions
+                    reflection={session.reflection}
+                    completedMissions={session.completedMissions}
+                    handleToggleMission={handleToggleMission}
+                    isTwilightMode={isTwilightMode}
+                  />
                 )}
 
                 {/* Narrative report widget */}
@@ -744,129 +535,12 @@ export default function App() {
 
                 {/* Carbon Pledges & Interventions */}
                 {session.reflection && (
-                  <div id="target-interventions-section" className="space-y-4">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-1.5">
-                      <div>
-                        <h4 className={`font-bold tracking-tight text-lg flex items-center gap-1.5 ${titleTextClass}`}>
-                          <TreePine className="w-5 h-5 text-emerald-800" /> Actionable Carbon Interventions
-                        </h4>
-                        <p className={`text-xs ${mutedTextClass}`}>
-                          Open any transition program to reveal localized instructions.
-                        </p>
-                      </div>
-
-                      <span className="text-xs font-semibold text-indigo-600">
-                        Pledged Pacts: {session.adoptedInterventions.length} of {session.reflection.interventions.length} proposed
-                      </span>
-                    </div>
-
-                    <div className="space-y-3">
-                      {session.reflection.interventions.map((item) => {
-                        const isPledged = session.adoptedInterventions.includes(item.actionId);
-                        const isExpanded = expandedActionId === item.actionId;
-
-                        return (
-                          <div
-                            key={item.actionId}
-                            id={`intervention-accordion-${item.actionId}`}
-                            className={`rounded-2xl border overflow-hidden transition-all duration-505 ${
-                              isTwilightMode ? "bg-[#12181F]/90 border-[#232A31]" : "bg-[#FCFAF6] border-[#E4E2DB]"
-                            }`}
-                          >
-                            <div
-                              onClick={() => setExpandedActionId(isExpanded ? null : item.actionId)}
-                              className="p-4 md:p-5 flex justify-between items-center cursor-pointer hover:bg-black/5 transition-colors select-none"
-                            >
-                              <div className="space-y-1">
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <span className={`text-sm font-bold ${titleTextClass}`}>
-                                    {item.title}
-                                  </span>
-                                  <span className={`text-[9px] font-bold uppercase px-2 py-0.5 rounded ${
-                                    isTwilightMode ? "bg-slate-800 text-slate-300" : "bg-stone-200 text-stone-700"
-                                  }`}>
-                                    {item.category}
-                                  </span>
-                                </div>
-
-                                <div className={`flex items-center gap-3 text-xs flex-wrap ${mutedTextClass}`}>
-                                  <span>
-                                    CO₂ Mitigation: <strong className="text-emerald-600">-{item.co2Savings.toFixed(1)}t</strong>/yr
-                                  </span>
-                                  <span>•</span>
-                                  <span>
-                                    Cost Savings: <strong className="uppercase">{item.costSavings}</strong>
-                                  </span>
-                                  <span>•</span>
-                                  <span>
-                                    Investment Effort: <strong className="uppercase">{item.investmentEffort}</strong>
-                                  </span>
-                                </div>
-                              </div>
-
-                              <div className="flex items-center gap-3">
-                                <button
-                                  id={`btn-pledge-${item.actionId}`}
-                                  type="button"
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    handleToggleIntervention(item.actionId, item.co2Savings);
-                                  }}
-                                  className={`px-3 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer border min-h-[44px] ${
-                                    isPledged
-                                      ? "bg-emerald-700 border-emerald-700 text-white"
-                                      : isTwilightMode
-                                      ? "border-[#232A31] text-slate-300 hover:bg-[#1A222B]"
-                                      : "border-[#E4E2DB] text-stone-700 hover:bg-stone-100"
-                                  }`}
-                                >
-                                  {isPledged ? "Chosen pact" : "Choose pact"}
-                                </button>
-
-                                <motion.div
-                                  animate={{ rotate: isExpanded ? 180 : 0 }}
-                                  transition={{ duration: 0.2 }}
-                                >
-                                  <ChevronDown className="w-5 h-5 text-slate-400" />
-                                </motion.div>
-                              </div>
-                            </div>
-
-                            <AnimatePresence>
-                              {isExpanded && (
-                                <motion.div
-                                  initial={{ height: 0, opacity: 0 }}
-                                  animate={{ height: "auto", opacity: 1 }}
-                                  exit={{ height: 0, opacity: 0 }}
-                                  transition={{ duration: 0.3 }}
-                                  className={`border-t p-5 space-y-4 ${
-                                    isTwilightMode ? "border-[#232A31] bg-black/20" : "border-stone-200 bg-stone-100/40"
-                                  }`}
-                                >
-                                  <p className={`text-xs leading-relaxed ${bodyTextClass}`}>
-                                    {item.empatheticExplanation}
-                                  </p>
-
-                                  <div className="space-y-2.5">
-                                    <h5 className={`text-[10px] uppercase font-bold tracking-widest ${mutedTextClass}`}>
-                                      Actionable Roadmap Checklist
-                                    </h5>
-                                    <ol className="list-decimal list-inside space-y-1.5 pl-1">
-                                      {item.steps.map((st, sidx) => (
-                                        <li key={`step-${sidx}`} className={`text-xs font-medium ${bodyTextClass}`}>
-                                          {st}
-                                        </li>
-                                      ))}
-                                    </ol>
-                                  </div>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
+                  <CarbonInterventions
+                    reflection={session.reflection}
+                    adoptedInterventions={session.adoptedInterventions}
+                    handleToggleIntervention={handleToggleIntervention}
+                    isTwilightMode={isTwilightMode}
+                  />
                 )}
               </div>
             </div>
