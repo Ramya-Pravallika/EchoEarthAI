@@ -1,0 +1,2 @@
+export const DEFAULT_ECO_POINTS = 0;
+export const ECOSYSTEM_VIABILITY_THRESHOLD = 50;
